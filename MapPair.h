@@ -33,16 +33,4 @@ public:
     bool operator==(MapPair<K, V>& other) {
         return key == other.key;
     }
-
-    void setValue(V v) {
-        value = v;
-    }
-
-    K getKey() {
-        return key;
-    }
-
-    V getValue() {
-        return value;
-    }
 };
