@@ -57,7 +57,20 @@ bool TreeMap<K, V>::contains(K key) {
 template<class K, class V>
 inline V& TreeMap<K, V>::get(K key)
 {
-    // TODO: insert return statement here
+    MapPair<K, V> searchPair(key, V()); // creating a mapPair with the key we want to search and a default value for V
+
+    try {
+        // calling get() from binary tree
+        MapPair<K, V>& searchResult = tree.get(searchPair);
+
+        // only returning the value from the searchResult
+        return searchResult.value;
+    }
+    catch (logic_error) {
+        //returns null if key isnt found
+        return nullptr;
+    }
+
 }
 
 template<class K, class V>
@@ -94,7 +107,7 @@ void TreeMap<K, V>::put(K key, V value) {
 template<class K, class V>
 inline int TreeMap<K, V>::size()
 {
-    return 0;
+    return tree.count();
 }
 
 //destructor, will clean up nodes when treeMap is removed

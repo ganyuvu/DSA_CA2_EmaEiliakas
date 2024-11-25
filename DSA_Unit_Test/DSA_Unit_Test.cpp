@@ -20,6 +20,14 @@ namespace DSACA2UnitTest
 			Assert::IsTrue(pair1 == pair2);
 		}
 
+		TEST_METHOD(notEqualsOperator) {
+
+			MapPair<int, std::string> pair1(1, "banana");
+			MapPair<int, std::string> pair2(2, "apple");
+
+			Assert::IsFalse(pair1 == pair2);
+		}
+
 		TEST_METHOD(lessThanOperator)
 		{
 			MapPair<int, std::string> pair1(1, "apple");
@@ -43,8 +51,19 @@ namespace DSACA2UnitTest
 	{
 	public:
 
-		TEST_METHOD(TestMethod1)
+		TEST_METHOD(TestTreeMapClear)
 		{
+			TreeMap<int, string> tree;
+
+			tree.put(1,"apple");
+			tree.put(2, "banana");
+
+			Assert::IsTrue(tree.contains(1));
+			Assert::IsTrue(tree.contains(2));
+
+			tree.clear();
+
+			Assert::IsFalse(tree.contains(1));	
 		}
 	};
 }
