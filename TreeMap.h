@@ -60,6 +60,12 @@ inline V& TreeMap<K, V>::get(K key)
     // TODO: insert return statement here
 }
 
+template<class K, class V>
+inline BinaryTree<K> TreeMap<K, V>::keySet()
+{
+    return BinaryTree<K>();
+}
+
 // removes the mapPair that has the given key
 //calling the remove() method in BinaryTree
 template <class K, class V>
@@ -70,6 +76,12 @@ bool TreeMap<K, V>::removeKey(K key) {
     return tree.remove(removePair); // similarly to contains method, removes mapPair by the key
 }
 
+template<class K, class V>
+inline V TreeMap<K, V>::operator[](K key)
+{
+    return V();
+}
+
 //adds new mapPair to binary tree
 template <class K, class V>
 void TreeMap<K, V>::put(K key, V value) {
@@ -77,6 +89,12 @@ void TreeMap<K, V>::put(K key, V value) {
     MapPair<K, V> addPair(key, value);
 
     tree.add(addPair); // adds a mapPair to the binary tree
+}
+
+template<class K, class V>
+inline int TreeMap<K, V>::size()
+{
+    return 0;
 }
 
 //destructor, will clean up nodes when treeMap is removed
