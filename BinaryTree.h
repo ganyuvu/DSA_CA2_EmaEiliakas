@@ -204,6 +204,7 @@ BinaryTree<T>::~BinaryTree()
 	}
 }
 
+//print inOrder starts on the left subtree, then it goes to the root, and finally goes to the right subtree
 template<class T>
 void BinaryTree<T>::printInOrder()
 {
@@ -213,9 +214,21 @@ void BinaryTree<T>::printInOrder()
 template<class T>
 void BinaryTree<T>::printInOrder(BSTNode<T>* node)
 {
+	// if the current node is null we stop going through all the nodes
+	if (node == nullptr)
+		return;
+	// goes to the left subtree
+	printInOrder(node->getLeft());
+
+	// will print the current node
+	cout << node->getItem() << endl;
+
+	// then goes to the right subtree
+	printInOrder(node->getRight());
 
 }
 
+//print in preOrder starts at the root, then goes to the left subtree and finally goes to the right subtree
 template<class T>
 void BinaryTree<T>::printPreOrder()
 {
@@ -225,10 +238,21 @@ void BinaryTree<T>::printPreOrder()
 template<class T>
 void BinaryTree<T>::printPreOrder(BSTNode<T>* node)
 {
+	if (node == nullptr)
+		return;
 
+	//will go to the right subtree
+	cout << node->getItem() << endl;
+
+	// will go to the left subtree
+	printPreOrder(node->getLeft());
+
+	//will go to the right subtree
+	printPreOrder(node->getRight());
 
 }
 
+//print postOrder goes to the left subtree first, then the right subtree and finally goes to the root last
 template<class T>
 void BinaryTree<T>::printPostOrder()
 {
@@ -238,5 +262,16 @@ void BinaryTree<T>::printPostOrder()
 template<class T>
 void BinaryTree<T>::printPostOrder(BSTNode<T>* node)
 {
+	if (node == nullptr)
+		return;
+
+	// will go to the left subtree
+	printPostOrder(node->getLeft());
+
+	// will go to the right subtree
+	printPostOrder(node->getRight());
+
+	// will go to the right subtree
+	cout << node->getItem() << endl;
 
 }

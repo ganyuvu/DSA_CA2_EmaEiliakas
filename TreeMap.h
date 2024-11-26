@@ -92,7 +92,7 @@ bool TreeMap<K, V>::removeKey(K key) {
 template<class K, class V>
 inline V TreeMap<K, V>::operator[](K key)
 {
-    return V();
+    return get(key);
 }
 
 //adds new mapPair to binary tree
