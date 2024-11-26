@@ -7,12 +7,13 @@ public:
     K key;
     V value;
 
-    // default constructor
+    //default constructor
     MapPair() {
-
+        this->key = K(); 
+        this->value = V();  
     }
 
-    // constructor
+    //constructor with parameters
     MapPair(K key, V value) {
         this->key = key;
         this->value = value;

@@ -55,9 +55,10 @@ bool TreeMap<K, V>::contains(K key) {
 }
 
 template<class K, class V>
-inline V& TreeMap<K, V>::get(K key)
+inline V&TreeMap<K, V>::get(K key)
 {
     MapPair<K, V> searchPair(key, V()); // creating a mapPair with the key we want to search and a default value for V
+    V defaultVal = V(); //setting to null
 
     try {
         // calling get() from binary tree
@@ -68,7 +69,7 @@ inline V& TreeMap<K, V>::get(K key)
     }
     catch (logic_error) {
         //returns null if key isnt found
-        return nullptr;
+        return defaultVal;
     }
 
 }
