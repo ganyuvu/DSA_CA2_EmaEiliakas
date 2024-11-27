@@ -74,10 +74,39 @@ inline V&TreeMap<K, V>::get(K key)
 
 }
 
-template<class K, class V>
-inline BinaryTree<K> TreeMap<K, V>::keySet()
-{
-    return BinaryTree<K>();
+template <class K, class V>
+inline BinaryTree<K> TreeMap<K, V>::keySet() {
+
+    //tree to store only the keys 
+    BinaryTree<K> keyTree; 
+
+    // node stores mappair and two pointers that go left and right, helps travel through a binary tree
+    //creating a pointer called currentNode that will point to the root node 
+    BSTNode<MapPair<K, V>>* currentNode = tree.root; 
+
+    //calling recursive method
+    getKeys(currentNode, keyTree);
+
+    return keyTree; 
+}
+
+// method will get keys in order from the tree and add them to keyTree recursively 
+template <class K, class V>
+void getKeys(BSTNode<MapPair<K, V>>* currentNode, BinaryTree<K>& keyTree) {
+
+    if (currentNode == nullptr) {
+        return;  // if there is no node we stop and go back to the node before null
+    }
+
+    // goes through the left nodes first as they are the smallest values, will keep going until null
+    getKeys(currentNode->getLeft(), keyTree);
+
+    // adds key to the keyTree 
+    keyTree.add(currentNode->getItem().key);
+
+    // then it goes through the right nodes as they are bigger, will keep going until null
+    getKeys(currentNode->getRight(), keyTree);
+
 }
 
 // removes the mapPair that has the given key
