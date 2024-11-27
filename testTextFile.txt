@@ -2,9 +2,9 @@ banana
 broccoli
 avocado
 apple
-beetroot
-asparagus
+beetroOt
+Asparagus
 cauliflower
 blueberry
 cucumber
-carrot
+CarroT
