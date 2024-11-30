@@ -1,0 +1,101 @@
+cat_id,cat_name,breed,age,weight,vaccination_status
+1,Cynthea,Bengal,20,3.13,false
+2,Catharina,Siamese,2,9.0,true
+3,Brice,Bengal,11,1.65,true
+4,Noami,Bengal,5,15.79,true
+5,Felicdad,Ragdoll,14,1.72,true
+6,Trescha,Bengal,9,4.92,true
+7,Kandy,Siamese,8,8.21,true
+8,Merilyn,Maine Coon,19,12.91,true
+9,Crissy,Bengal,4,5.23,true
+10,Gus,Ragdoll,20,18.35,false
+11,Spense,Maine Coon,3,18.31,true
+12,Kizzee,Bengal,8,19.44,false
+13,Udale,Bengal,9,13.36,false
+14,Corri,Bengal,14,7.71,true
+15,Karilynn,Persian,1,18.68,true
+16,Verena,Ragdoll,19,7.08,true
+17,Berny,Persian,14,3.39,true
+18,Wilhelmina,Maine Coon,2,19.07,false
+19,Lisette,Bengal,15,13.85,true
+20,Ollie,Persian,3,14.85,true
+21,Nikolai,Siamese,13,3.15,false
+22,Chandler,Siamese,5,16.63,true
+23,Matthieu,Maine Coon,16,9.02,false
+24,Wyatan,Siamese,18,2.11,true
+25,Pat,Maine Coon,10,3.62,true
+26,Denni,Maine Coon,13,3.82,false
+27,Myrah,Bengal,13,11.92,false
+28,Berri,Ragdoll,4,2.53,true
+29,Euphemia,Siamese,14,10.55,true
+30,Harcourt,Persian,12,8.62,false
+31,Daryl,Maine Coon,9,14.68,true
+32,Zara,Persian,7,12.68,false
+33,Druci,Siamese,6,4.06,true
+34,Roland,Maine Coon,11,9.78,false
+35,Whitaker,Persian,10,2.17,false
+36,Darcy,Siamese,2,15.08,true
+37,Adolphus,Persian,11,16.77,false
+38,Lloyd,Bengal,8,17.95,false
+39,Vale,Siamese,12,11.54,true
+40,Ernesto,Ragdoll,20,4.03,true
+41,Nicoli,Maine Coon,10,14.32,false
+42,Elfreda,Maine Coon,5,1.48,true
+43,Alejandrina,Bengal,18,6.91,false
+44,Fonsie,Siamese,5,18.98,true
+45,Aloin,Bengal,4,17.51,true
+46,Inga,Bengal,16,1.34,true
+47,Molli,Bengal,11,3.33,false
+48,Bird,Maine Coon,6,4.73,true
+49,Danny,Bengal,11,19.8,false
+50,Carling,Bengal,13,11.62,true
+51,Zarah,Maine Coon,8,12.58,false
+52,Agnese,Maine Coon,13,12.43,true
+53,Rodge,Ragdoll,18,14.2,true
+54,Guthrey,Ragdoll,19,10.17,false
+55,Layney,Siamese,10,10.67,true
+56,Tracie,Bengal,10,8.52,true
+57,Keri,Bengal,20,2.9,false
+58,Adan,Siamese,13,15.66,false
+59,Kimbell,Persian,20,13.69,true
+60,Arnoldo,Maine Coon,2,13.36,true
+61,Demetris,Persian,16,9.64,false
+62,Carmita,Maine Coon,20,19.24,true
+63,Tamqrah,Maine Coon,0,6.48,false
+64,Lynnett,Persian,0,6.62,true
+65,Maggi,Siamese,12,6.27,false
+66,Beryle,Maine Coon,19,4.17,true
+67,Ev,Maine Coon,18,14.11,false
+68,Elisabetta,Persian,5,12.51,true
+69,Hilary,Siamese,0,3.54,false
+70,Pollyanna,Persian,14,8.94,false
+71,Sharl,Persian,20,7.11,false
+72,Tanya,Ragdoll,19,4.25,false
+73,Isabella,Ragdoll,7,15.09,true
+74,Burgess,Siamese,12,5.25,false
+75,Foss,Persian,9,14.78,true
+76,Stephen,Ragdoll,0,15.34,true
+77,Fredrika,Persian,7,16.36,true
+78,Sephira,Ragdoll,7,10.71,false
+79,Jessika,Persian,2,8.49,true
+80,Prue,Siamese,19,6.96,true
+81,Dicky,Bengal,9,5.81,true
+82,Drew,Bengal,4,13.56,false
+83,Madelle,Persian,14,4.37,false
+84,Crichton,Ragdoll,19,9.26,false
+85,Gaven,Bengal,4,8.79,true
+86,Harriott,Siamese,4,17.98,false
+87,Hamlen,Maine Coon,1,5.46,false
+88,Violetta,Bengal,3,15.04,true
+89,Tobye,Bengal,3,1.23,false
+90,Hedwig,Bengal,19,7.59,false
+91,Samson,Siamese,12,16.37,false
+92,Sebastian,Ragdoll,4,4.28,false
+93,Stoddard,Siamese,14,19.53,false
+94,Barde,Bengal,10,8.3,true
+95,Rodrique,Persian,9,16.04,true
+96,Ahmed,Bengal,3,14.14,false
+97,Blancha,Persian,1,4.01,true
+98,Karlyn,Persian,12,13.35,true
+99,Ashlin,Persian,9,7.02,true
+100,Rosanna,Siamese,13,12.19,false

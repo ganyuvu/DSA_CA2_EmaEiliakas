@@ -1,10 +1,10 @@
-#include "readFile.h"
+#include "readTextFile.h"
 #include <fstream>
 
 using namespace std;
 
 //used code from previous bugs Life project to help write this section: https://github.com/ganyuvu/CA2_BugsLife_Ema_Eiliakas_D00255056/blob/master/Board.cpp
-void ReadWords(const std::string& fileName, TreeMap<char, BinaryTree<std::string>>& letterTreeMap) {
+void ReadWords(const string& fileName, TreeMap<char, BinaryTree<string>>& letterTreeMap) {
 
     ifstream file(fileName); //opens file
 

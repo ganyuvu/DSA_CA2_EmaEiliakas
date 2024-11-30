@@ -2,25 +2,55 @@
 #include <string>
 #include "TreeMap.h"
 #include "BinaryTree.h"
-#include "ReadFile.h"
+#include "ReadTextFile.h"
+#include "CatData.h"
+
 
 using namespace std;
 
 void displayMenu();
+void openTextFile();
+void openCSVFile();
 
 int main() {
 
+    int fileChoice;
+
+    cout << "Choose file you would like to open:" << endl;
+    cout << "1. Text file" << endl;
+    cout << "2. CSV file" << endl;
+    cout << "Enter choice: ";
+
+    cin >> fileChoice;
+
+    if (fileChoice == 1) {
+
+        openTextFile();
+        
+    }
+
+    else if (fileChoice == 2) {
+        openCSVFile();
+    }
+
+    else {
+        cout << "\nError, please try again" << endl;
+    }
+
+
+}
+
+void openTextFile() {
     TreeMap<char, BinaryTree<string>> letterTreeMap;
 
     string fileName = "testTextFile.txt"; //setting file path to a variable
-
-    //calls readWords() from readFile, gives it the filename and populates letterTreeMap
-    ReadWords(fileName, letterTreeMap);
+    ReadWords(fileName, letterTreeMap);  //calls readWords() from readFile, gives it the filename and populates letterTreeMap
 
     int choice;
 
     do {
         displayMenu();
+
         cin >> choice;
 
         if (choice == 1) {
@@ -47,12 +77,12 @@ int main() {
                 cout << "\nWords starting with '" << letter << "': " << endl;
                 words.printInOrder(); //calls printInOrder from BinaryTree 
             }
-           
+
             else {
                 cout << "\nThere are no words for the letter '" << letter << "'" << endl;
             }
         }
-        
+
         else if (choice == 3) {
             cout << "\nGoodbyeeee" << endl;
         }
@@ -61,11 +91,56 @@ int main() {
         else {
             cout << "\nError, please try again" << endl;
         }
-    } 
-    
+    }
+
     while (choice != 3);
 
-    return 0;
+    return;
+}
+
+void openCSVFile() {
+
+    TreeMap<int, BinaryTree<CatData>> dataMap;
+
+    string fileName = "CatCSVData.csv"; // setting file path to a variable
+
+    dataMap = readCSVFile(fileName); // calls readCSVFile() in CatData to parse CSV
+
+    int choice;
+
+    do {
+
+        cout << "\n=== CSV Options ===" << endl;
+        cout << "1. View data" << endl;
+        cout << "2. Index data by field" << endl;
+        cout << "3. Exit" << endl;
+        cout << "Enter choice: ";
+        cin >> choice;
+
+        if (choice == 1) {
+
+            cout << "\nCAT DATA:\n" << endl;
+            cout << "ID\tName\tBreed\tAge\tWeight\tVaccination Status" << endl;
+            cout << "-----------------------------------------------------------" << endl;
+
+            //need to figure out how to print the data
+        }
+        
+        else if (choice == 2) {
+
+         //index stuff will go here
+
+        } 
+        
+        else if (choice == 3) {
+            cout << "\nGoodbyeeee" << endl;
+        } 
+        
+        else {
+            cout << "\nError, please try again" << endl;
+        }
+    } while (choice != 3);
+
 }
 
 void displayMenu() {

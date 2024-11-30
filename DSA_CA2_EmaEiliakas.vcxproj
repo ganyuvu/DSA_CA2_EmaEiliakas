@@ -127,18 +127,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CatData.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="ReadFile.cpp" />
+    <ClCompile Include="ReadTextFile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BinaryTree.h" />
     <ClInclude Include="BSTNode.h" />
+    <ClInclude Include="CatData.h" />
     <ClInclude Include="MapPair.h" />
-    <ClInclude Include="ReadFile.h" />
+    <ClInclude Include="ReadTextFile.h" />
     <ClInclude Include="TreeMap.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="testTextFile.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CatCSVData.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
