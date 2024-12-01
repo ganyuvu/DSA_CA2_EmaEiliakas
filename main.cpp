@@ -100,11 +100,12 @@ void openTextFile() {
 
 void openCSVFile() {
 
-    TreeMap<int, BinaryTree<CatData>> dataMap;
+    TreeMap<int, CatData> dataMap;
 
     string fileName = "CatCSVData.csv"; // setting file path to a variable
 
     dataMap = readCSVFile(fileName); // calls readCSVFile() in CatData to parse CSV
+
 
     int choice;
 
@@ -118,14 +119,10 @@ void openCSVFile() {
         cin >> choice;
 
         if (choice == 1) {
+            cout << "\nCAT DATA (1-100):\n" << endl;
 
-            cout << "\nCAT DATA:\n" << endl;
-            cout << "ID\tName\tBreed\tAge\tWeight\tVaccination Status" << endl;
-            cout << "-----------------------------------------------------------" << endl;
-
-            //need to figure out how to print the data
+            dataMap.printInOrder();  
         }
-        
         else if (choice == 2) {
 
          //index stuff will go here

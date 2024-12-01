@@ -2,6 +2,8 @@
 #include "BSTNode.h"
 #include <vector>
 
+using namespace std;
+
 template <class T>
 class BinaryTree
 {
@@ -221,7 +223,7 @@ void BinaryTree<T>::printInOrder(BSTNode<T>* node)
 	printInOrder(node->getLeft());
 
 	// will print the current node
-	cout << node->getItem() << endl;
+	cout << node->getItem();
 
 	// then goes to the right subtree
 	printInOrder(node->getRight());

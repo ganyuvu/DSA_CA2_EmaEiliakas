@@ -24,6 +24,7 @@ public:
     void put(K key, V value);
     int size();
     bool removeKey(K key);
+    void printInOrder();
     V operator[](K key);
 
     ~TreeMap(); //destructor
@@ -138,6 +139,11 @@ template<class K, class V>
 inline int TreeMap<K, V>::size()
 {
     return tree.count();
+}
+
+template <typename Key, typename Value>
+void TreeMap<Key, Value>::printInOrder() {
+    tree.printInOrder(); 
 }
 
 //destructor, will clean up nodes when treeMap is removed

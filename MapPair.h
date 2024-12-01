@@ -34,4 +34,9 @@ public:
     bool operator==(MapPair<K, V>& other) {
         return key == other.key;
     }
+
+    friend ostream& operator<<(ostream& out, const MapPair<K, V>& other) {
+        out << "\n[Key: " << other.key << other.value << "]";
+        return out;
+    }
 };

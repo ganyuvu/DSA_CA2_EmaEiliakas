@@ -2,7 +2,8 @@
 
 using namespace std;
 
-CatData::CatData(){}
+CatData::CatData() 
+    : cat_id(0), cat_name(""), breed(""), age(0), weight(0.0f), vaccination_status(false) {}
 
 CatData::CatData(int cat_id, string cat_name, string breed, int age, float weight, bool vaccination_status) {
     this->cat_id = cat_id;
@@ -13,20 +14,22 @@ CatData::CatData(int cat_id, string cat_name, string breed, int age, float weigh
     this->vaccination_status = vaccination_status;
 }
 
+
 // method to read data from a CSV file 
 //learnt about parsing more here, like using ss.ignore: https://labex.io/tutorials/cpp-how-to-use-stringstream-in-c-425236
-TreeMap<int, BinaryTree<CatData>> readCSVFile(const string& fileName) {
+TreeMap<int, CatData> readCSVFile(const string& fileName) {
+
+    TreeMap<int, CatData> dataMap;
 
     ifstream file(fileName);
 
     if (!file.is_open()) {
         cout << "Unable to open file: " << fileName << endl;
-        return {};
+        return dataMap;
     }
 
     string line;
 
-    TreeMap<int, BinaryTree<CatData>> dataMap;
 
     // skipping the header line
     getline(file, line);
@@ -57,17 +60,10 @@ TreeMap<int, BinaryTree<CatData>> readCSVFile(const string& fileName) {
         // we then convert the vacination status to bool
         status = (vaccination_status == "true");
 
-        CatData row(cat_id, cat_name, breed, age, weight, status);
+        CatData catRow(cat_id, cat_name, breed, age, weight, status);
 
-        // Add to TreeMap with cat_id as the key
-        if (dataMap.contains(cat_id)) {
-            dataMap.get(cat_id).add(row);
-        }
-        else {
-            BinaryTree<CatData> newTree;
-            newTree.add(row);
-            dataMap.put(cat_id, newTree);
-        }
+        // ddd the CatData object to the TreeMap
+        dataMap.put(cat_id, catRow);
     }
 
     file.close();

@@ -18,31 +18,19 @@ struct CatData {
     float weight;
     bool vaccination_status;
 
-    // Default constructor
     CatData();
 
-    // Parameterized constructor
     CatData(int cat_id, string cat_name, string breed, int age, float weight, bool vaccination_status);
 
-    // Less than operator (compares by cat_id)
-    bool operator<(CatData& other) {
-        return cat_id < other.cat_id;
+   friend ostream& operator<<(ostream& out, const CatData& cat) {
+        out << " Name: " << cat.cat_name << ", Breed: " << cat.breed
+            << ", Age: " << cat.age << ", Weight: " << cat.weight << "kg, Vaccination Status: "
+            << (cat.vaccination_status ? "Vaccinated" : "Not vaccinated");
+        return out;
     }
 
-    // Greater than operator (compares by cat_id)
-    bool operator>(CatData& other) {
-        return cat_id > other.cat_id;
-    }
-
-    // Equals operator (compares by cat_id)
-    bool operator==(CatData& other) {
-        return cat_id == other.cat_id;
-    }
 };
 
-// Overloading << operator to print CatData
-ostream& operator<<(ostream& os, const CatData& cat);
+TreeMap<int, CatData> readCSVFile(const string& fileName);
 
-// Function to read data from a CSV file and return a BinaryTree of CatData
-TreeMap<int, BinaryTree<CatData>> readCSVFile(const string& fileName);
 
