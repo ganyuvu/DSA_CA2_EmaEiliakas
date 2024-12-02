@@ -69,3 +69,55 @@ TreeMap<int, CatData> readCSVFile(const string& fileName) {
     file.close();
     return dataMap;
 }
+
+// method that will index data based on the given field by the user
+void indexData(BSTNode<MapPair<int, CatData>>* root, TreeMap<string, int>& index, string field) {
+
+    if (root == nullptr) {
+        return; //stops the recursion if the node is null
+    }
+
+    string keyValues; // will store the values under the key that's been selected
+
+    // gets the CatData values from the MapPair stored in the node
+    const CatData& cat = root->getItem().value;
+
+    // checking if the field inputted by the user matches the one in the tree
+    if (field == "cat_name") {
+        keyValues = cat.cat_name;
+    }
+    else if (field == "breed") {
+        keyValues = cat.breed;
+    }
+    else if (field == "age") {
+        keyValues = to_string(cat.age);
+    }
+    else if (field == "weight") {
+        keyValues = to_string(cat.weight);
+    }
+    else if (field == "vaccination_status") {
+        keyValues = cat.vaccination_status ? "Vaccinated" : "Not Vaccinated";
+    }
+    else {
+        // error message
+        cout << "Not a valid field name, please try again!" << endl;
+        return;
+    }
+
+    // if a key containts the same key values 
+    if (index.contains(keyValues)) {
+
+        // should increment by 1 but it wont work for some reason
+
+        int currentCount = index.get(keyValues);
+        index.put(keyValues, currentCount + 1); //if the key values already in the tree it will increment by 1
+    }
+    else {
+        //if the key values dont exist in the tree yet we leave it at 1
+        index.put(keyValues, 1);
+    }
+
+    //recursively goes through the entire tree, node by node, starting on the left first
+    indexData(root->getLeft(), index, field);
+    indexData(root->getRight(), index, field);
+}

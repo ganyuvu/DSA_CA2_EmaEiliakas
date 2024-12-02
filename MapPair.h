@@ -36,7 +36,7 @@ public:
     }
 
     friend ostream& operator<<(ostream& out, const MapPair<K, V>& other) {
-        out << "\n[Key: " << other.key << other.value << "]";
+        out << "\n[Key: " << other.key << " " << other.value << "]";
         return out;
     }
 };

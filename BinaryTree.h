@@ -13,6 +13,7 @@ public:
 	BinaryTree();
 	BinaryTree(const BinaryTree<T>& other);
 	BinaryTree<T> operator=(const BinaryTree<T>& other);
+	BSTNode<T>* getRoot() const;
 	void add(T& item);
 	bool remove(T& item);
 	void clear();
@@ -53,6 +54,11 @@ BinaryTree<T> BinaryTree<T>::operator=(const BinaryTree<T>& other)
 		root = nullptr;
 	return *this;
 
+}
+
+template <class T>
+BSTNode<T>* BinaryTree<T>::getRoot() const {
+	return root;
 }
 template <class T>
 void BinaryTree<T>::add(T& item)
@@ -223,7 +229,7 @@ void BinaryTree<T>::printInOrder(BSTNode<T>* node)
 	printInOrder(node->getLeft());
 
 	// will print the current node
-	cout << node->getItem();
+	cout << node->getItem() <<endl;
 
 	// then goes to the right subtree
 	printInOrder(node->getRight());

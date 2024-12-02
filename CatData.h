@@ -33,4 +33,6 @@ struct CatData {
 
 TreeMap<int, CatData> readCSVFile(const string& fileName);
 
+void indexData(BSTNode<MapPair<int, CatData>>* root, TreeMap<string, int>& index, string field);
+
 

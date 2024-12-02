@@ -5,7 +5,6 @@
 #include "ReadTextFile.h"
 #include "CatData.h"
 
-
 using namespace std;
 
 void displayMenu();
@@ -125,7 +124,21 @@ void openCSVFile() {
         }
         else if (choice == 2) {
 
-         //index stuff will go here
+            string field;
+            cout << "\nFields you can index: (cat_name, breed, age, weight, vaccination_status): ";
+            cin >> field;
+
+            //creating a treemap to store the key and the count
+            TreeMap<string, int> index;
+
+            // tryna get the root node here
+            BSTNode<MapPair<int, CatData>>* root = dataMap.getRoot();  
+
+            // calling the indexdata from catData
+            indexData(root, index, field);  
+
+            cout << "\nIndexed data for field: " << field << endl;
+            index.printInOrder();  
 
         } 
         
@@ -147,3 +160,4 @@ void displayMenu() {
     cout << "3. Exit" << endl;
     cout << "Enter choice of number: ";
 }
+

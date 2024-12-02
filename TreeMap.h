@@ -26,6 +26,7 @@ public:
     bool removeKey(K key);
     void printInOrder();
     V operator[](K key);
+    BSTNode<MapPair<K, V>>* getRoot() const; 
 
     ~TreeMap(); //destructor
 
@@ -145,6 +146,12 @@ template <typename Key, typename Value>
 void TreeMap<Key, Value>::printInOrder() {
     tree.printInOrder(); 
 }
+
+template <class K, class V>
+BSTNode<MapPair<K, V>>* TreeMap<K, V>::getRoot() const {
+    return tree.getRoot(); // gets the binary tree root node
+}
+
 
 //destructor, will clean up nodes when treeMap is removed
 template <class K, class V>
